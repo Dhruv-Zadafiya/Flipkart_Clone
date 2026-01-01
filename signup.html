@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Flipkart Clone Signup</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+body{
+  background:#f1f3f6;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.signup-box{
+  width:720px;
+  height:430px;
+  background:#fff;
+  display:flex;
+  box-shadow:0 2px 10px rgba(0,0,0,0.2);
+}
+
+.left-panel{
+  width:40%;
+  background:#2874f0;
+  padding:40px 30px;
+  color:#fff;
+}
+
+.left-panel h2{
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+.left-panel p{
+  font-size:16px;
+  line-height:1.6;
+  color:#dbdbdb;
+}
+
+.right-panel{
+  width:60%;
+  padding:35px 40px;
+}
+
+.input-box{
+  width:100%;
+  border:none;
+  border-bottom:1px solid #ccc;
+  padding:12px 5px;
+  margin-bottom:25px;
+  font-size:14px;
+  outline:none;
+}
+
+.input-box:focus{
+  border-bottom:1px solid #2874f0;
+}
+
+.signup-btn{
+  width:100%;
+  background:#fb641b;
+  color:#fff;
+  border:none;
+  padding:12px;
+  font-size:15px;
+  cursor:pointer;
+  border-radius:2px;
+}
+
+.signup-btn:hover{
+  background:#f25c18;
+}
+
+.login-link{
+  margin-top:40px;
+  text-align:center;
+  color:#2874f0;
+  font-weight:500;
+  cursor:pointer;
+}
+
+.error{
+  color:red;
+  font-size:13px;
+  display:none;
+  margin-bottom:10px;
+}
+
+@media(max-width:800px){
+  .signup-box{
+    flex-direction:column;
+    width:90%;
+    height:auto;
+  }
+  .left-panel,.right-panel{
+    width:100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="signup-box">
+
+ 
+  <div class="left-panel">
+    <h2>Looks like you're new here!</h2>
+    <p>
+      Sign up with your mobile number to get started
+    </p>
+  </div>
+
+  
+  <div class="right-panel">
+    <div class="error" id="errorMsg"></div>
+
+    <input type="text" class="input-box" id="name"
+           placeholder="Enter Full Name">
+
+    <input type="text" class="input-box" id="mobile"
+           placeholder="Enter Mobile Number">
+
+    <input type="password" class="input-box" id="pass"
+           placeholder="Create Password">
+
+    <button class="signup-btn" onclick="signup()">Continue</button>
+
+    <div class="login-link" onclick="openLogin()">
+      Existing User? Log in
+    </div>
+  </div>
+
+</div>
+
+<script>
+function signup(){
+  let name = document.getElementById("name").value.trim();
+  let mobile = document.getElementById("mobile").value.trim();
+  let pass = document.getElementById("pass").value.trim();
+  let error = document.getElementById("errorMsg");
+
+  if(name === "" || mobile === "" || pass === ""){
+    error.style.display = "block";
+    error.innerText = "All fields are required";
+    return;
+  }
+
+  if(mobile.length !== 10 || isNaN(mobile)){
+    error.style.display = "block";
+    error.innerText = "Enter valid 10-digit mobile number";
+    return;
+  }
+
+  if(pass.length < 6){
+    error.style.display = "block";
+    error.innerText = "Password must be at least 6 characters";
+    return;
+  }
+
+  error.style.display = "none";
+  alert("Account Created Successfully!");
+  window.location.href = "login.html";
+}
+
+function openLogin(){
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

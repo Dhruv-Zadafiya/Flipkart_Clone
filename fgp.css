@@ -1,0 +1,111 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #74ebd5, #ACB6E5);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container */
+.forgot-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+/* Card Style */
+.form-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+/* Headings */
+.form-card h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.instruction {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* Input Group */
+.input-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Submit Button */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: #2980b9;
+  transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Back Link */
+.back-to-login {
+  margin-top: 20px;
+}
+
+.back-to-login a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-to-login a:hover {
+  text-decoration: underline;
+}
